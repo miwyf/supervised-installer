@@ -51,10 +51,10 @@ info "Restarting docker service"
 systemctl restart "${SERVICE_DOCKER}"
 
 # Check network connection
-#while ! ping -c 1 -W 1 ${URL_CHECK_ONLINE}; do
-#    info "Waiting for ${URL_CHECK_ONLINE} - network interface might be down..."
-#    sleep 2
-#done
+while ! ping -c 1 -W 1 ${URL_CHECK_ONLINE}; do
+    info "Waiting for ${URL_CHECK_ONLINE} - network interface might be down..."
+    sleep 2
+done
 
 # Get primary network interface
 PRIMARY_INTERFACE=$(ip route | awk '/^default/ { print $5; exit }')
