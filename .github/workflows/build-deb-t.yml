@@ -1,4 +1,4 @@
-name: Build Test Deb Package
+name: Build Test Deb Package test
 
 on:
   push:
