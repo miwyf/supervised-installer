@@ -19,16 +19,18 @@ Step 1: Install the following dependencies with this command:
 ```bash
 apt install \
 apparmor \
-jq \
-wget \
+cifs-utils \
 curl \
-udisks2 \
-libglib2.0-bin \
-network-manager \
 dbus \
+jq \
+libglib2.0-bin \
 lsb-release \
+network-manager \
+nfs-common \
 systemd-journal-remote \
-systemd-resolved -y
+systemd-resolved \
+udisks2 \
+wget -y
 ```
 
 Step 2: Install Docker-CE with the following command:
@@ -44,7 +46,7 @@ Instructions for installing the OS-Agent can be found [here](https://github.com/
 Step 4: Install the Home Assistant Supervised Debian Package:
 
 ```bash
-wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
+wget -O homeassistant-supervised.deb https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
 apt install ./homeassistant-supervised.deb
 ```
 

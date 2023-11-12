@@ -52,6 +52,7 @@ if [[ "$(sysctl --values kernel.dmesg_restrict)" != "0" ]]; then
 fi
 
 
+
 dpkg-divert --package homeassistant-supervised --add --rename \
     --divert /etc/NetworkManager/NetworkManager.conf.real /etc/NetworkManager/NetworkManager.conf
 
@@ -63,3 +64,6 @@ dpkg-divert --package homeassistant-supervised --add --rename \
 
 dpkg-divert --package homeassistant-supervised --add --rename \
     --divert /etc/network/interfaces.real /etc/network/interfaces
+
+dpkg-divert --package homeassistant-supervised --add --rename \
+    --divert /etc/systemd/resolved.conf.real /etc/systemd/resolved.conf
